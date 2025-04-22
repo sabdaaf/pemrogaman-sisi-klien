@@ -47,3 +47,27 @@ p2.classList.toggle("label"); //menambahkan class label ke element p2 jika belum
 p2.classList.item(0); //mengambil class ke 0 dari element p2
 p2.classList.contains("label"); //mengecek apakah class label ada di element p2
 p2.classList.replace("label", "label2"); //mengganti class label menjadi label2
+
+//dom manipulation untuk node
+const liNew = document.createElement("li");
+const liText = document.createTextNode("paragraf baru");
+liNew.appendChild(liText); //menambahkan text ke dalam liNew
+
+const ul = document.querySelector("ul");
+const li = ul.querySelector("li:nth-child(2)"); //mengambil li ke 2 dari ul
+
+ul.insertBefore(liNew, li); //menambahkan liNew sebelum li ke 2
+
+//-------------------event---------------------
+function ubahWarna() {
+  container.style.backgroundColor = "#3f704d"; //mengubah warna background dari element yang di klik
+}
+
+const p4 = document.querySelector("section#b p");
+p4.addEventListener("click", function () {
+  const ul = document.querySelector("section#b ul");
+  const liNew = document.createElement("li");
+  const liText = document.createTextNode("paragraf baru");
+  liNew.appendChild(liText); //menambahkan text ke dalam liNew
+  ul.appendChild(liNew); //menambahkan liNew ke dalam ul
+});
